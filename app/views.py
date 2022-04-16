@@ -21,7 +21,7 @@ def contacto(request):
         formulario = ContactoForm(data=request.POST)
         if formulario.is_valid():
             formulario.save()
-            data["mesaje"] = "conctacto guardado"
+            data["mesaje"] = "contacto guardado"
         else:
             data["form"] = formulario
             data["mesaje"] = "No fuesposible guardar el contacto.."
