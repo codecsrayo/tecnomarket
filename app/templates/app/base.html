@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnomarket</title>
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+
     
+    {% block css%}
+
+    {%endblock%}
+
     {% load static %}
     <link rel="stylesheet" href={% static "app/css/estilos.css" %}>
     
@@ -64,18 +68,14 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
     <script src="{% static 'app/js/menu.js' %}"></script>
 
-    <script>
-        $(document).ready(function() {
-          $('.slider').bxSlider({
-              mode: 'fade',//horizontal, vertical, fade
-              auto: true,
-              pause: 2000
-          });
-        });
-    </script>
+
+
+    {% block js %}
+
+    {% endblock%}
 
 </body>
 </html>
