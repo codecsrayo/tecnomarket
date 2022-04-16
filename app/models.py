@@ -1,3 +1,4 @@
+from distutils.command.upload import upload
 from pyexpat import model
 from django.db import models
 
@@ -15,6 +16,7 @@ class Producto(models.Model):
     nuevo = models.BooleanField()
     marca = models.ForeignKey(Marca, on_delete=models.PROTECT)
     fecha_fabricacion = models.DateField()
+    imagen = models.ImageField(upload_to="productos", null=True)
     
     def __str__(self):
         return self.nombre
