@@ -12,6 +12,7 @@
     {%endblock%}
 
     {% load static %}
+
     <link rel="stylesheet" href={% static "app/css/estilos.css" %}>
     
 </head>
@@ -19,7 +20,7 @@
 
     
     <header id="header">
-        <img class="menu" src="img/menuiconwhite.png" alt="menu" id="menu">
+        <img class="menu" src="{% static 'app/img/menuiconwhite.png' %}" alt="menu" id="menu">
         <div class="contenedor_logo">
             <img  class="logo"  src="{% static 'app/img/tecnomarketpngicono.png' %}" alt="logo">
         </div>
