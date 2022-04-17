@@ -50,7 +50,7 @@
                 <th>Opciones</th>
         
                 </tr>
-                {% for p in productos%}
+                {% for p in entity%}
             
                 <tr>
                 <td> {{p.nombre | title}}</td>
@@ -76,6 +76,12 @@
         
         {% endfor%}
         </table>
+
+        <hr>
+        <div>
+            {% include 'app/paginator.html' %}
+
+        </div>
     </div>
 </div>
 
