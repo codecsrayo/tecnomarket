@@ -1,5 +1,7 @@
 from django import forms
 from .models import Contacto, Producto
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 
 class ContactoForm(forms.ModelForm):
     
@@ -10,6 +12,7 @@ class ContactoForm(forms.ModelForm):
         
 
 class ProductoForm(forms.ModelForm):
+    imagen = forms.ImageField(required=False)
     
     class Meta:
         model = Producto
@@ -17,3 +20,11 @@ class ProductoForm(forms.ModelForm):
         widgets = {
             'fecha_fabricacion': forms.SelectDateWidget()
         }
+        
+        
+        
+class CustomUserCretionForm(UserCreationForm):
+    
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']

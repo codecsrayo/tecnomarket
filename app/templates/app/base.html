@@ -40,13 +40,38 @@
                         <a href="{%url 'galeria'%}">Galería</a> 
                     </li>
 
+
+                    {% if perms.app.add_producto%}
                     <li> 
                         <a href="{%url 'agregar_producto'%}">Agregar</a> 
                     </li> 
-                    
+                    {% endif %}
+
+                    {% if perms.app.view_producto%}
                     <li> 
+
                         <a href="{%url 'listar_productos'%}">Listar productos</a> 
                     </li>   
+                    {% endif %}
+
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'logout'%}"> Cerrar sesión </a>
+                    </li>
+
+                    <li>
+                        <a href="#">@{{ user.username }}</a>
+
+                    </li>
+                    {% else %}
+                    <li>
+                        <a href="{% url 'login' %}"> iniciar sesión</a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'registro' %}">Registrate</a>
+                    </li>
+                    {% endif %}
                 
                 </ul>
             </nav>
